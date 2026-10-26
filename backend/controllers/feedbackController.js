@@ -4,10 +4,24 @@ const Feedback = require('../models/Feedback');
 // Helper to determine whether id is an ObjectId
 const isValidObjectId = (id) => mongoose.Types.ObjectId.isValid(id);
 
+// Helper to ensure MongoDB is ready
+const isDbConnected = (res) => {
+  if (mongoose.connection.readyState !== 1) {
+    res.status(503).json({
+      success: false,
+      message: 'Database connection is offline. Please configure a valid MONGODB_URI in backend/.env',
+    });
+    return false;
+  }
+  return true;
+};
+
 // @desc    Get all feedback records
 // @route   GET /api/feedback
 // @access  Public
 const getAllFeedback = async (req, res) => {
+  if (!isDbConnected(res)) return;
+
   try {
     const feedbackList = await Feedback.find().sort({ createdAt: -1 });
     res.status(200).json({
@@ -29,6 +43,8 @@ const getAllFeedback = async (req, res) => {
 // @route   GET /api/feedback/:id
 // @access  Public
 const getFeedbackById = async (req, res) => {
+  if (!isDbConnected(res)) return;
+
   try {
     const { id } = req.params;
     let feedback;
@@ -65,6 +81,8 @@ const getFeedbackById = async (req, res) => {
 // @route   POST /api/feedback
 // @access  Public
 const createFeedback = async (req, res) => {
+  if (!isDbConnected(res)) return;
+
   try {
     let { courseId, courseName, courseDuration, feedbackComments, feedbackRating } = req.body;
 
@@ -131,6 +149,8 @@ const createFeedback = async (req, res) => {
 // @route   PUT /api/feedback/:id
 // @access  Public
 const updateFeedback = async (req, res) => {
+  if (!isDbConnected(res)) return;
+
   try {
     const { id } = req.params;
     const { courseName, courseDuration, feedbackComments, feedbackRating } = req.body;
@@ -193,6 +213,8 @@ const updateFeedback = async (req, res) => {
 // @route   DELETE /api/feedback/:id
 // @access  Public
 const deleteFeedback = async (req, res) => {
+  if (!isDbConnected(res)) return;
+
   try {
     const { id } = req.params;
 
