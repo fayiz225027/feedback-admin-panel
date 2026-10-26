@@ -4,7 +4,7 @@
   "description": "Full Stack MERN Feedback Management Admin Panel",
   "author": "Fayiz <fayiz225027@sahrdaya.ac.in>",
   "scripts": {
-    "build": "npm install --prefix frontend && npm run build --prefix frontend && npm install --prefix backend",
+    "build": "npm install --include=dev --prefix frontend && npm run build --prefix frontend && npm install --prefix backend",
     "start": "npm start --prefix backend",
     "install:backend": "cd backend && npm install",
     "install:frontend": "cd frontend && npm install",
