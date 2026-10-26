@@ -2,6 +2,7 @@
   "name": "feedback-admin-backend",
   "version": "1.0.0",
   "description": "Backend API for Feedback Admin Panel using Express and Mongoose",
+  "author": "Fayiz <fayiz225027@sahrdaya.ac.in>",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

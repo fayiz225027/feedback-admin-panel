@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
+const path = require('path');
 const mongoose = require('mongoose');
 const connectDB = require('./config/db');
 const feedbackRoutes = require('./routes/feedbackRoutes');
@@ -40,25 +41,26 @@ app.get('/api/health', (req, res) => {
   });
 });
 
-// Root route
-app.get('/', (req, res) => {
-  res.send({
-    message: 'Feedback Management Admin API is running',
-    version: '1.0.0',
-    endpoints: {
-      feedback: '/api/feedback',
-      health: '/api/health',
-    },
-  });
-});
+// Production: Serve React frontend build
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../frontend/dist')));
 
-// 404 handler for unknown routes
-app.use((req, res, next) => {
-  res.status(404).json({
-    success: false,
-    message: `Resource not found at ${req.originalUrl}`,
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '../frontend/dist', 'index.html'));
   });
-});
+} else {
+  // Development Root route
+  app.get('/', (req, res) => {
+    res.send({
+      message: 'Feedback Management Admin API is running',
+      version: '1.0.0',
+      endpoints: {
+        feedback: '/api/feedback',
+        health: '/api/health',
+      },
+    });
+  });
+}
 
 // Global error handling middleware
 app.use((err, req, res, next) => {
