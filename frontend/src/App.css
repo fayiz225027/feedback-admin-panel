@@ -1,9 +1,9 @@
 /* Global CSS Variables & Modern Reset */
 :root {
-  --primary: #4f46e5;
-  --primary-hover: #4338ca;
-  --primary-light: #eef2ff;
-  --primary-border: #c7d2fe;
+  --primary: #0d9488;
+  --primary-hover: #0f766e;
+  --primary-light: #f0fdfa;
+  --primary-border: #99f6e4;
 
   --secondary: #64748b;
   --secondary-hover: #475569;
@@ -164,12 +164,12 @@ body {
   width: 40px;
   height: 40px;
   border-radius: var(--radius-md);
-  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  background: linear-gradient(135deg, #0d9488, #059669);
   color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 10px rgba(79, 70, 229, 0.3);
+  box-shadow: 0 4px 12px rgba(13, 148, 136, 0.35);
 }
 
 .brand-text {
@@ -404,8 +404,8 @@ body {
 }
 
 .bg-indigo {
-  background-color: #e0e7ff;
-  color: #4338ca;
+  background-color: #ccfbf1;
+  color: #0f766e;
 }
 
 .bg-amber {
@@ -499,7 +499,7 @@ body {
 
 .search-input:focus {
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.18);
 }
 
 .clear-search-btn {
@@ -582,10 +582,10 @@ body {
   font-size: 0.78rem;
   font-weight: 700;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  background-color: #ede9fe;
-  color: #5b21b6;
+  background-color: #ccfbf1;
+  color: #0f766e;
   border-radius: var(--radius-sm);
-  border: 1px solid #ddd6fe;
+  border: 1px solid #99f6e4;
   letter-spacing: 0.02em;
 }
 
@@ -759,7 +759,7 @@ body {
 .spinner {
   width: 36px;
   height: 36px;
-  border: 3px solid rgba(79, 70, 229, 0.2);
+  border: 3px solid rgba(13, 148, 136, 0.2);
   border-top-color: var(--primary);
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
@@ -792,12 +792,12 @@ body {
 .btn-primary {
   background-color: var(--primary);
   color: #ffffff;
-  box-shadow: 0 1px 3px rgba(79, 70, 229, 0.3);
+  box-shadow: 0 1px 3px rgba(13, 148, 136, 0.3);
 }
 
 .btn-primary:hover:not(:disabled) {
   background-color: var(--primary-hover);
-  box-shadow: 0 3px 6px rgba(79, 70, 229, 0.4);
+  box-shadow: 0 3px 6px rgba(13, 148, 136, 0.4);
 }
 
 .btn-secondary {
@@ -1047,7 +1047,7 @@ body {
 .form-input:focus,
 .form-textarea:focus {
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.18);
 }
 
 .form-input-disabled {
@@ -1098,9 +1098,9 @@ body {
 }
 
 .preset-active {
-  background-color: #e0e7ff;
-  border-color: #c7d2fe;
-  color: #4338ca;
+  background-color: #ccfbf1;
+  border-color: #99f6e4;
+  color: #0f766e;
   font-weight: 600;
 }
 

@@ -20,10 +20,10 @@ function App() {
         <footer className="app-footer">
           <div className="footer-content">
             <p>
-              <strong>EduFeedback Admin Panel</strong> &bull; MERN Stack Assessment Project
+              <strong>EduFeedback Admin Panel</strong> &bull; Developed by Fayiz (Roll No: 225027)
             </p>
             <p className="footer-subtext">
-              MongoDB Atlas &bull; Express.js &bull; React.js &bull; Node.js
+              MERN Stack Final Assessment &bull; MongoDB Atlas &bull; Express.js &bull; React.js &bull; Node.js
             </p>
           </div>
         </footer>
